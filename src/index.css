@@ -1,0 +1,92 @@
+@import "./assets/fonts/fonts.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* GLOBAL */
+body {
+    font-family: "Poppins", "Open Sans", sans-serif;
+}
+h1, h2 {
+    @apply text-slate-800 text-3xl lg:text-5xl font-bold pb-4
+}
+h3 {
+    @apply text-slate-700 text-lg lg:text-xl font-bold
+}
+p, li {
+    @apply text-slate-600 text-sm lg:text-lg
+}
+a {
+    @apply text-sm lg:text-lg hover:text-blue-600 transition duration-300
+}
+.collection-centres ul {
+    @apply pl-3 lg:pl-5 pt-4
+}
+.search-results ul {
+    @apply pt-3
+}
+.sec-1, .sec-2 {
+    @apply w-full flex flex-col gap-y-5
+}
+
+/* HTML5 ACCORDION */
+summary {
+    @apply block relative py-[0.7em] px-[2em] text-sm lg:text-2xl transition duration-300 font-medium text-gray-700 hover:text-blue-600 bg-slate-200 cursor-pointer hover:bg-slate-300 focus:outline-none
+}
+summary:before {
+    content: '';
+    position: absolute;
+    top: 0.9em;
+    left: 1em;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgb(55, 65, 81);
+    transform: rotate(0);
+    transform-origin: .2rem 50%;
+    transition: .25s transform ease;
+}
+summary:hover:before {
+    border-color: transparent transparent transparent rgb(37, 99, 235);
+}
+summary::-webkit-details-marker {
+    display: none; 
+}
+details {
+    @apply overflow-hidden
+}
+details[open] {
+    transition: max-height 400ms ease-out;
+    max-height: 800px;
+}
+details[open] > summary:before {
+    transform: rotate(90deg);
+}
+details summary::-webkit-details-marker {
+    @apply hidden
+}
+details[open] + div.content {
+    max-height: 800px;
+    transition: max-height 400ms ease-out, border 0ms linear;
+}
+details[open] span::before {
+    rotate: 90deg;
+    transition: rotate 200ms ease-out;
+}
+.content {
+    max-width: 500px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    max-height: 0;
+    overflow: hidden;
+    border: 2px solid transparent;
+    transition: max-height 400ms ease-out, border 0ms 400ms linear;
+}
+  
+/* LOADER */
+.loader-container {
+    @apply flex items-center justify-center h-dvh mx-auto w-full
+}
+.loader {
+    @apply w-[48px] h-[48px] border-4 border-b-blue-500 border-slate-200 rounded-full inline-block box-border animate-spin
+}
