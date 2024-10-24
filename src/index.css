@@ -82,6 +82,7 @@ details[open] span::before {
     border: 2px solid transparent;
     transition: max-height 400ms ease-out, border 0ms 400ms linear;
 }
+
   
 /* LOADER */
 .loader-container {
