@@ -90,3 +90,11 @@ details[open] span::before {
 .loader {
     @apply w-[48px] h-[48px] border-4 border-b-blue-500 border-slate-200 rounded-full inline-block box-border animate-spin
 }
+
+/* RESPONSIVE */
+@media screen and (max-width: 480px) {
+    summary:before {
+        top: 1em;
+        border-width: 6px;
+    }
+}
